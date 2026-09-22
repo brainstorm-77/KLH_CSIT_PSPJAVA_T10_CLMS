@@ -1,20 +1,16 @@
 import java.util.Scanner;
 
 public class PersonalBank {
-
-    static String[] accountNumbers = {
+      static String[] accountNumbers = {
         "2620090077",
         "2620030330",
         "2620030392",
         "2620030291",
         "2620090333"
     };
-
-    public static boolean checkAccount(String accountNumber) {
-
+  public static boolean checkAccount(String accountNumber) {
         for (int i = 0; i < accountNumbers.length; i++) {
-
-            if (accountNumber.equals(accountNumbers[i])) {
+if (accountNumber.equals(accountNumbers[i])) {
                 return true;
             }
         }
@@ -23,8 +19,7 @@ public class PersonalBank {
     }
 
     public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
+         Scanner sc = new Scanner(System.in);
 
         // Customer details
         String name;
@@ -46,8 +41,7 @@ public class PersonalBank {
 
         System.out.print("Enter your account number: ");
         accountNumber = sc.nextLine();
-
-        if (checkAccount(accountNumber)) {
+         if (checkAccount(accountNumber)) {
 
             System.out.println("\nAccount verified successfully!");
             System.out.println("Welcome, " + name + "!");
@@ -64,7 +58,6 @@ public class PersonalBank {
 
         System.out.print("Enter your age: ");
         age = sc.nextInt();
-
         System.out.print("Enter your initial balance: ");
         balance = sc.nextDouble();
 
@@ -74,7 +67,6 @@ public class PersonalBank {
             System.out.println("\nWelcome, " + name + "!");
             System.out.println("Note: You are a minor account holder.");
         }
-
         int choice;
 
         do {
@@ -92,15 +84,12 @@ public class PersonalBank {
             choice = sc.nextInt();
 
             switch (choice) {
-
                 case 1:
                     System.out.print("Enter amount to deposit: ");
                     deposit = sc.nextDouble();
-
                     if (deposit > 0) {
                         balance = balance + deposit;
                         totalDeposit = totalDeposit + deposit;
-
                         System.out.println("Deposit successful!");
                         System.out.println("Amount deposited: Rs." + deposit);
                         System.out.println("Current balance: Rs." + balance);
@@ -112,11 +101,9 @@ public class PersonalBank {
                 case 2:
                     System.out.print("Enter amount to withdraw: ");
                     withdraw = sc.nextDouble();
-
                     if (withdraw > 0 && withdraw <= balance) {
                         balance = balance - withdraw;
                         totalWithdraw = totalWithdraw + withdraw;
-
                         System.out.println("Withdrawal successful!");
                         System.out.println("Amount withdrawn: Rs." + withdraw);
                         System.out.println("Current balance: Rs." + balance);
@@ -151,7 +138,6 @@ public class PersonalBank {
                 case 5:
                     System.out.println("\nThank you for banking with us, " + name + "!");
                     break;
-
                 default:
                     System.out.println("Invalid choice! Please select 1 to 5.");
             }
